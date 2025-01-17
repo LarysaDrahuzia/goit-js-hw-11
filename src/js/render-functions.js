@@ -12,7 +12,7 @@ export const renderPhotoCards = photoData => {
       }) =>
         `<a href="${largeImageURL}" class="gallery-item">
   <div class="photo-card">
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+  <img src="${webformatURL}" alt="${tags}" loading="lazy" width="360" />
   <div class="photo-info">
     <p class="photo-info-item">Likes<span>${likes}</span></p>
 	<p class="photo-info-item">Views<span>${views}</span></p>

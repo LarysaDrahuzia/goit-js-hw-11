@@ -40,13 +40,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
 }
 .gallery-item {
   width: calc((100% - 60px) / 4);
-  height: auto;
   overflow: auto;
   object-fit: cover;
   cursor: pointer;
@@ -59,16 +59,21 @@
 
 .photo-card {
   border: 1px solid #ddd;
+
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-card > img {
+  height: 152px;
+  /* max-width: 360px; */
 }
 
 .photo-info {
   padding-block: 4px;
   background-color: #f9f9f9;
   display: flex;
-
   justify-content: space-around;
   font-size: 12px;
 }
@@ -78,7 +83,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-weight: 600;
+}
+
+.photo-info-item > span {
+  font-weight: 400;
 }
 
 .loader {
