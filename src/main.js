@@ -11,11 +11,16 @@ const formEl = document.querySelector('.form-search');
 const galleryContainer = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
+loader.style.display = 'none';
+
 const onFormSubmit = event => {
   event.preventDefault();
-  const searchQuery = event.target.searchQuery.value.trim();
+  galleryContainer.innerHTML = '';
+  loader.style.display = 'block';
 
-  if (searchQuery === '') {
+  const query = event.currentTarget.elements.user_query.value.trim();
+
+  if (query === '') {
     iziToast.warning({
       title: 'Warning',
       message: 'Please enter a search query!',
@@ -23,7 +28,7 @@ const onFormSubmit = event => {
     return;
   }
 
-  fetchPhotos(searchQuery)
+  fetchPhotos(query)
     .then(data => {
       loader.style.display = 'none';
 
